@@ -8,7 +8,9 @@ Pod::Spec.new do |s|
   s.authors      = { "Matthew Baranowski" => "matt.baranowski@willowtreeapps.com" }
   s.source       = { :git => "https://github.com/mbaranowski/MantleXMLAdapter.git", :tag => '0.2.0' }
   s.source_files = 'Mantle/MTLXMLAdapter.{h,m}', 'Mantle/NSValueTransformer+MTLXMLTransformerAdditions.{h,m}'
+  s.libraries    = 'xml2'
   s.dependency  'KissXML'
   s.dependency  'Mantle'
+  s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '"$(SDKROOT)/usr/include/libxml2"' }
   s.requires_arc = true
 end
